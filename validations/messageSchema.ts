@@ -2,7 +2,6 @@ import { MESSAGE_CONTENT_MAX_LENGTH, MESSAGE_CONTENT_MIN_LENGTH } from "@/consta
 import { errorMessages } from "@/constants/validationMessages";
 import { z } from "zod";
 
-
 export const messagesSchema = z.object({
     content: z
         .string()

@@ -1,5 +1,12 @@
 import { MESSAGE_CONTENT_MAX_LENGTH, MESSAGE_CONTENT_MIN_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH, VERIFY_CODE_LENGTH } from "./validation";
 
+export const successMessage = {
+    dbAlreadyConnected: "Already connected to database.",
+    dbConnected: "Database connection established successfully 🙌.",
+    verifyEmailSuccess: "Verification email sent successfully",
+    registerUser: "User registered successfully",
+}
+
 export const errorMessages = {
     usernameRequired: "Username is required",
     usernameMinLength: `Username must be at least ${USERNAME_MIN_LENGTH} characters`,
@@ -14,6 +21,14 @@ export const errorMessages = {
     verifyCodeExpireRequired: "Verify code expiry is required",
     verifyCodeLength: `Verify code must be ${VERIFY_CODE_LENGTH} digits`,
     contentMinLength: `Content must be at least ${MESSAGE_CONTENT_MIN_LENGTH} characters long`,
-    contentMaxLength: `Content must be at no longer that ${MESSAGE_CONTENT_MAX_LENGTH} characters`
+    contentMaxLength: `Content must be at no longer that ${MESSAGE_CONTENT_MAX_LENGTH} characters`,
+    noDbUri: "No database URI provided",
+    dbConnectionFailed: "Database connection failed.",
+    verifyEmailFailed: "Error while sending verification email",
+    provideFromEmail: "From email not provided, please provide in order to transfer email",
+    registerUser: "Error while registering user",
 };
+
+
+
 
