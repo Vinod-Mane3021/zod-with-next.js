@@ -30,6 +30,7 @@ export const errorMessages = {
     userAlreadyExists: "User already exists with this email",
     usernameAlreadyTaken: "Username is already taken",
     userNotCreated: "User not created",
+    userNotSaved: "User not saved",
 };
 
 

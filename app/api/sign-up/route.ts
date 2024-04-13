@@ -44,8 +44,15 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponseTy
             existingUserByEmail.password = hashedUserPassword;
             existingUserByEmail.verifyCode = verifyCode;
             existingUserByEmail.verifyCodeExpiry = verifyCodeExpiry
-
-            const user =  await existingUserByEmail.save();
+            const oldUserVerifiedNow =  await existingUserByEmail.save();
+            if(!oldUserVerifiedNow) {
+                return nextResponse({
+                    success: false,
+                    status: ResponseStatus.INTERNAL_SERVER_ERROR,
+                    statusCode: HttpStatusCode.INTERNAL_SERVER_ERROR,
+                    message: errorMessages.userNotSaved,
+                })
+            }
         }
 
         if(!existingUserByEmail) {
