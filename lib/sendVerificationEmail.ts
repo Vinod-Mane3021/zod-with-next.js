@@ -4,7 +4,7 @@ import Env from "@/constants/env";
 import { ResponseStatus } from "@/constants/responseStatus";
 import { errorMessages, successMessage } from "@/constants/validationMessages";
 import EmailVerificationTemplate from "@/templates/email-verification";
-import { ApiResponseType } from "@/types/ApiResponseType";
+import { ApiResponseType } from "@/types/responseTypes";
 import { SendEmailProps } from "@/types/email";
 
 export const sendVerificationEmail = async ({

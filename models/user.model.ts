@@ -28,7 +28,7 @@ const UserSchema: Schema<UserType> = new Schema({
         type: String,
         required: [true, errorMessages.verifyCodeRequired],
     },
-    verifyCodeExpire: {
+    verifyCodeExpiry: {
         type: Date,
         required: [true, errorMessages.verifyCodeExpireRequired]
     },

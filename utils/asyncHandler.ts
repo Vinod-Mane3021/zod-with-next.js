@@ -1,13 +1,12 @@
 import HttpStatusCode from "@/constants/httpStatusCode"
 import { ResponseStatus } from "@/constants/responseStatus"
-import { errorMessages, successMessage } from "@/constants/validationMessages"
-import { ApiResponseType } from "@/types/ApiResponseType"
+import { errorMessages } from "@/constants/validationMessages"
+import { ApiResponseType } from "@/types/responseTypes"
 import { NextRequest, NextResponse } from "next/server"
-
 
 export const asyncHandler = (fun: Function) => {
     return async (req: NextRequest): Promise<NextResponse<ApiResponseType>> => {
-        try {
+        try {   
             return await fun(req)
         } catch (error) {
             console.error(errorMessages.registerUser, error);

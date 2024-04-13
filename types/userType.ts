@@ -6,7 +6,7 @@ export interface UserType extends Document {
     email: string;
     password: string;
     verifyCode: string;
-    verifyCodeExpire: Date;
+    verifyCodeExpiry: Date;
     isVerified: boolean;
     isAcceptingMessage: boolean;
     messages: MessageType[]

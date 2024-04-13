@@ -4,7 +4,7 @@ export const successMessage = {
     dbAlreadyConnected: "Already connected to database.",
     dbConnected: "Database connection established successfully 🙌.",
     verifyEmailSuccess: "Verification email sent successfully",
-    registerUser: "User registered successfully",
+    registerUser: "User registered successfully, Please verify your email",
 }
 
 export const errorMessages = {
@@ -27,6 +27,9 @@ export const errorMessages = {
     verifyEmailFailed: "Error while sending verification email",
     provideFromEmail: "From email not provided, please provide in order to transfer email",
     registerUser: "Error while registering user",
+    userAlreadyExists: "User already exists with this email",
+    usernameAlreadyTaken: "Username is already taken",
+    userNotCreated: "User not created",
 };
 
 

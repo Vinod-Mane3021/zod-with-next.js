@@ -1,6 +1,7 @@
 import { ResponseStatus } from "@/constants/responseStatus";
 import { MessageType } from "./messageType";
 import HttpStatusCode from "@/constants/httpStatusCode";
+import { NextResponse } from "next/server";
 
 export interface ApiResponseType {
     success: boolean;
@@ -11,4 +12,6 @@ export interface ApiResponseType {
     messages?: Array<MessageType>;
     data?: any;
 }
+
+export type NextResponseType = NextResponse<ApiResponseType>;
 
