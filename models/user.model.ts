@@ -1,5 +1,5 @@
 import { UserType } from "@/types/userType";
-import regexPatterns from "@/utils/regex";
+import regexPatterns from "@/lib/regex";
 import { errorMessages } from "@/constants/validationMessages";
 import mongoose, { Schema, Model, models, model } from "mongoose";
 import MessageSchema from "./message.model";

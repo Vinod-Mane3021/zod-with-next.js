@@ -16,3 +16,8 @@ export const getVerifyCodeExpiry = (): Date => {
     verifyCodeExpiry.setHours(verifyCodeExpiry.getHours() + VERIFY_CODE_EXPIRY);
     return verifyCodeExpiry;
 }
+
+export const comparePassword = async (password: string, hashedPassword: string) => {
+    const compare = await bcrypt.compare(password, hashedPassword)
+    return compare;
+}

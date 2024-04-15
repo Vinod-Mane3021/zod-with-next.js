@@ -31,6 +31,10 @@ export const errorMessages = {
     usernameAlreadyTaken: "Username is already taken",
     userNotCreated: "User not created",
     userNotSaved: "User not saved",
+    userNotFound: "No user found with this credential",
+    userNotVerified: "Please verify your account first, before login",
+    invalidCredentials: "Invalid credentials",
+    incorrectPassword: "Incorrect password"
 };
 
 

@@ -2,17 +2,20 @@ import UserModel from "@/models/user.model";
 import { MessageType } from "@/types/messageType";
 import { UserType } from "@/types/userType";
 
-export const findUserByUsernameAndIsVerified = async (username: string, isVerified: boolean) => {
+export const findUserByUsernameAndIsVerified = async (
+    username: string,
+    isVerified: boolean
+) => {
     const user = await UserModel.findOne({
         username,
         isVerified: isVerified,
-    })
+    });
     return user;
-}
+};
 export const findUserByEmail = async (email: string) => {
-    const user = await UserModel.findOne({ email })
+    const user = await UserModel.findOne({ email });
     return user;
-}
+};
 
 export const createNewUser = async (
     username: string,
@@ -22,7 +25,7 @@ export const createNewUser = async (
     verifyCodeExpiry: Date,
     isVerified: boolean,
     isAcceptingMessage: boolean,
-    messages: MessageType[],
+    messages: MessageType[]
 ) => {
     const newUser = new UserModel({
         username,
@@ -32,9 +35,19 @@ export const createNewUser = async (
         verifyCodeExpiry,
         isVerified,
         isAcceptingMessage,
-        messages
-    })
+        messages,
+    });
     const createdUser = await newUser.save();
     return createdUser;
-}
+};
 
+export const findUserByEmailOrUsername = async (
+    email: string,
+    username: string
+) => {
+    const user = await UserModel.findOne({
+        $or: [{ email }, { username }],
+    });
+
+    return user;
+};

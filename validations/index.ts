@@ -1,6 +1,6 @@
 import { EMAIL_MIN_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from "@/constants/validation"
 import { errorMessages } from "@/constants/validationMessages"
-import regexPatterns from "@/utils/regex"
+import regexPatterns from "@/lib/regex"
 import { z } from "zod"
 
 export const usernameValidation = z
