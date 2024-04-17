@@ -7,7 +7,8 @@ const Env = {
     EMAIL: {
         RESEND_API_KEY: process.env.RESEND_API_KEY,
         SEND_EMAIL_FROM: process.env.SEND_EMAIL_FROM
-    }
+    },
+    NEXT_AUTH_SECRET: process.env.NEXT_AUTH_SECRET,
 }
 
 export default Env;

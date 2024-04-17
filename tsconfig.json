@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "templates/email-verification.tsx", "lib/bcrypt.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "templates/email-verification.tsx", "lib/bcrypt.ts", "app/(auth)/sign-up/page.tsx"],
   "exclude": ["node_modules"]
 }
