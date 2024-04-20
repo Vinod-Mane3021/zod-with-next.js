@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "@/context/AuthProvider";
+import logger from "@/logger";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  logger.error("error log")
+  logger.warn("warn log")
+  logger.info("info log")
+  logger.http("http log")
+  logger.verbose("verbose log")
+  logger.debug("debug log")
+  logger.silly("silly log")
+
+  console.log("process.env.NODE_ENV " + process.env.NODE_ENV);
+
   return (
     <html lang="en">
       <AuthProvider>
