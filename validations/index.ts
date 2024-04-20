@@ -1,4 +1,4 @@
-import { EMAIL_MIN_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH } from "@/constants/validation"
+import { EMAIL_MIN_LENGTH, PASSWORD_MIN_LENGTH, USERNAME_MAX_LENGTH, USERNAME_MIN_LENGTH, VERIFY_CODE_LENGTH } from "@/constants/validation"
 import { errorMessages } from "@/constants/validationMessages"
 import regexPatterns from "@/lib/regex"
 import { z } from "zod"
@@ -18,3 +18,7 @@ export const emailValidation = z
 export const passwordValidation = z
     .string()
     .min(PASSWORD_MIN_LENGTH, {message: errorMessages.passwordMinLength})
+
+export const verifyCodeValidation = z
+    .string()
+    .length(VERIFY_CODE_LENGTH, {message: errorMessages.verifyCodeLength})

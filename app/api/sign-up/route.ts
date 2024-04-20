@@ -3,14 +3,14 @@ import bcrypt from 'bcryptjs'
 import sendVerificationEmail from "@/lib/sendVerificationEmail";
 import { NextRequest, NextResponse } from "next/server";
 import { errorMessages, successMessage } from "@/constants/validationMessages";
-import { ApiResponseType } from "@/types/responseTypes";
+import { ApiResponseType, NextResponseType } from "@/types/responseTypes";
 import { ResponseStatus } from "@/constants/responseStatus";
 import HttpStatusCode from "@/constants/httpStatusCode";
 import nextResponse from "@/lib/apiResponse";
 import { createNewUser, findUserByEmail, findUserByUsernameAndIsVerified } from "@/services/user.service";
 import { getVerifyCode, getVerifyCodeExpiry, hashPassword } from "@/lib/bcrypt";
 
-export async function POST(req: NextRequest): Promise<NextResponse<ApiResponseType>> {
+export async function POST(req: NextRequest): Promise<NextResponseType> {
     await dbConnect();
     try {
         const {username, email, password} = await req.json();

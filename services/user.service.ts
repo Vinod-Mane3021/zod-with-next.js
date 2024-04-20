@@ -8,7 +8,7 @@ export const findUserByUsernameAndIsVerified = async (
 ) => {
     const user = await UserModel.findOne({
         username,
-        isVerified: isVerified,
+        isVerified,
     });
     return user;
 };
@@ -16,6 +16,11 @@ export const findUserByEmail = async (email: string) => {
     const user = await UserModel.findOne({ email });
     return user;
 };
+
+export const findUserByUsername = async (username: string) => {
+    const user = await UserModel.findOne({username})
+    return user;
+}
 
 export const createNewUser = async (
     username: string,
